@@ -1,0 +1,157 @@
+.module-book {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  position: relative;
+  padding: 10px 0;
+  border-bottom: 1px solid #eae3d3;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  > .book-detail:not(:first-child) {
+    padding-left: 3%;
+  }
+
+  > .book-detail:not(:last-child) {
+    padding-right: 3%;
+  }
+
+  .book-image {
+    width: 70px;
+    flex: 0 0 auto;
+    position: relative;
+    line-height: 0;
+
+    .mask {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 26px;
+      height: 26px;
+      background: url("../images/superscript.png") no-repeat 0 0;
+      background-size: cover;
+    }
+
+    .cover {
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 0;
+        padding-bottom: 140%;
+      }
+    }
+  }
+
+  .book-detail {
+    width: 75%;
+    flex: 8 8 auto;
+    line-height: 20px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    > div:not(:last-child) {
+      margin-bottom: 3px;
+    }
+
+    .title,
+    .sub-title {
+      line-height: 24px;
+      flex: 1 1 100%;
+      padding-right: 10px;
+    }
+
+    .title {
+      color: #262626;
+      font-size: 18px;
+    }
+
+    .sub-title {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .read {
+      flex: 0 0 auto;
+      color: #999;
+      font-size: 12px;
+    }
+
+    .author {
+      width: 90%;
+      color: #999;
+    }
+
+    .description {
+      width: 95%;
+      color: #999;
+    }
+
+    .tag,
+    .tag-line {
+      color: #666;
+      margin-left: -5px;
+
+      span {
+        padding: 1px 2px;
+        margin-left: 4px;
+        font-size: 12px;
+      }
+    }
+
+    .tag {
+      color: #666;
+      margin-left: -5px;
+
+      span {
+        border: 1px solid #e3e3e3;
+        border-radius: 2px;
+      }
+    }
+
+    .tag-line {
+
+      span {
+        padding-right: 6px;
+        position: relative;
+        border: none;
+
+        &:not(:last-child):after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 51%;
+          transform: translateY(-50%);
+          width: 1px;
+          height: 12px;
+          background: #999;
+        }
+      }
+    }
+  }
+
+  .book-check {
+    width: 30px;
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    > span {
+      .checkbox;
+    }
+  }
+}
